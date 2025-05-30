@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js", // Your main Express server file
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)", // Match all routes
+      "dest": "server.js" // Forward all requests to your Express app
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+    // Add other always-production env vars here if needed,
+    // but secrets should go into Vercel's Environment Variables UI.
+  }
+}
